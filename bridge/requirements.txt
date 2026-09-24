@@ -1,0 +1,3 @@
+# Use an existing official Linux Aria Gen 1 SDK environment when available.
+projectaria-client-sdk==2.5.0
+opencv-python-headless>=4.8,<5

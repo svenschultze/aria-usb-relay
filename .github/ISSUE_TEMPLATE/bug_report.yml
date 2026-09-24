@@ -1,0 +1,31 @@
+name: Bug report
+description: Report a reproducible problem with setup, relay, or live preview.
+body:
+  - type: markdown
+    attributes:
+      value: Do not include pairing codes, private keys, certificates, real device identifiers, local addresses, or camera captures. Report security issues privately as described in SECURITY.md.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include the stage that fails and whether the problem persists after a clean stop and physical reconnect.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Versions and hardware
+      description: App commit/version, host OS, WSL/Linux version, SDK version, phone model/Android version, and Aria generation. Omit serial numbers and account names.
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Sanitized diagnostics
+      description: Review any doctor output or logs before sharing. A short relevant excerpt is preferable to a full archive.

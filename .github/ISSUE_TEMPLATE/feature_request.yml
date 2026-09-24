@@ -1,0 +1,20 @@
+name: Research feature request
+description: Propose a concrete workflow or capability.
+body:
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Research workflow and problem
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Proposed behavior and success criteria
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Hardware and validation available
+      description: Describe models and platforms, without private identifiers.

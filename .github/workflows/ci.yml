@@ -1,0 +1,86 @@
+name: Build and test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  offline-tests:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-2022]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.10'
+      - uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Public source audit
+        run: python tests/audit_public.py
+      - name: JVM protocol and relay tests
+        run: python tests/run_jvm.py
+      - name: Python transport, orchestration, and desktop boundary tests
+        run: python -m unittest discover -s tests -p "test_*.py" -v
+      - name: Preview buffer tests
+        run: python -m unittest discover -s bridge -p "test_*.py" -v
+      - name: PowerShell syntax
+        shell: pwsh
+        run: |
+          $failures = @()
+          Get-ChildItem scripts -Filter '*.ps1' | ForEach-Object {
+            $tokens = $null
+            $issues = $null
+            [System.Management.Automation.Language.Parser]::ParseFile($_.FullName, [ref]$tokens, [ref]$issues) | Out-Null
+            $failures += $issues
+          }
+          if ($failures.Count) { $failures | Format-List; exit 1 }
+      - name: Bash syntax
+        if: runner.os == 'Linux'
+        run: for script in scripts/*.sh; do bash -n "$script"; done
+
+  android:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Install pinned Android platform and build tools
+        shell: bash
+        run: |
+          sdk_manager="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          test -x "$sdk_manager"
+          set +o pipefail
+          yes | "$sdk_manager" 'platforms;android-36' 'build-tools;36.1.0'
+      - name: Build debug and unsigned release; run Android lint
+        run: bash gradlew assembleDebug assembleRelease lintDebug --no-daemon --stacktrace
+      - name: Upload debug APK and lint report
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        if: always()
+        with:
+          name: android-debug-and-lint
+          path: |
+            app/build/outputs/apk/debug/app-debug.apk
+            app/build/reports/lint-results-debug.html
+          if-no-files-found: warn
+          retention-days: 14

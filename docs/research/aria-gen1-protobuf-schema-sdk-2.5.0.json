@@ -1,0 +1,4796 @@
+{
+  "name": "aria.proto",
+  "package": "aria_proto",
+  "syntax": null,
+  "dependencies": [
+    "aria_recording_profiles.proto"
+  ],
+  "messages": [
+    {
+      "name": "Request",
+      "fields": [
+        {
+          "name": "version",
+          "number": 1,
+          "label": 2,
+          "type": 13,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "method",
+          "number": 2,
+          "label": 1,
+          "type": 14,
+          "typeName": ".aria_proto.Method",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "seq",
+          "number": 3,
+          "label": 1,
+          "type": 13,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "body",
+          "number": 4,
+          "label": 1,
+          "type": 12,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "compress_response",
+          "number": 5,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "Response",
+      "fields": [
+        {
+          "name": "seq",
+          "number": 1,
+          "label": 1,
+          "type": 13,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "code",
+          "number": 2,
+          "label": 1,
+          "type": 14,
+          "typeName": ".aria_proto.ResponseCode",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "body",
+          "number": 3,
+          "label": 1,
+          "type": 12,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "compressed",
+          "number": 4,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "ErrorDetails",
+      "fields": [
+        {
+          "name": "code",
+          "number": 1,
+          "label": 2,
+          "type": 14,
+          "typeName": ".aria_proto.ErrorCode",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "debug_details",
+          "number": 2,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "localized_user_facing_description",
+          "number": 3,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "ble_pairing_key",
+          "number": 4,
+          "label": 1,
+          "type": 11,
+          "typeName": ".aria_proto.BlePairingKey",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "BlePairingKey",
+      "fields": [
+        {
+          "name": "key",
+          "number": 1,
+          "label": 2,
+          "type": 13,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "HelloRequest",
+      "fields": [
+        {
+          "name": "client_public_key",
+          "number": 1,
+          "label": 2,
+          "type": 12,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "client_challenge",
+          "number": 2,
+          "label": 2,
+          "type": 12,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "known_cert_fingerprint",
+          "number": 3,
+          "label": 1,
+          "type": 12,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "app_id",
+          "number": 4,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "app_version",
+          "number": 5,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "HelloSignedData",
+      "fields": [
+        {
+          "name": "server_public_key",
+          "number": 1,
+          "label": 2,
+          "type": 12,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "authentication_challenge",
+          "number": 2,
+          "label": 1,
+          "type": 12,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "device_needs_to_be_unlocked",
+          "number": 3,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "is_device_managed",
+          "number": 4,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "HelloResponse",
+      "fields": [
+        {
+          "name": "signed_data",
+          "number": 1,
+          "label": 2,
+          "type": 12,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "signature",
+          "number": 2,
+          "label": 2,
+          "type": 12,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "server_certificate",
+          "number": 3,
+          "label": 1,
+          "type": 12,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "provision",
+          "number": 4,
+          "label": 1,
+          "type": 5,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "registration_challenge_request_package",
+          "number": 5,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "AuthenticateRequest",
+      "fields": [
+        {
+          "name": "signed_authentication_challenge",
+          "number": 1,
+          "label": 2,
+          "type": 12,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "WifiNetwork",
+      "fields": [
+        {
+          "name": "ssid",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "auth",
+          "number": 2,
+          "label": 3,
+          "type": 14,
+          "typeName": ".aria_proto.WifiAuthentication",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "signal_level",
+          "number": 3,
+          "label": 1,
+          "type": 5,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "WifiScanResponse",
+      "fields": [
+        {
+          "name": "networks",
+          "number": 1,
+          "label": 3,
+          "type": 11,
+          "typeName": ".aria_proto.WifiNetwork",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "device_mac_address",
+          "number": 2,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "WifiConnectRequest",
+      "fields": [
+        {
+          "name": "ssid",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "password",
+          "number": 2,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "auth",
+          "number": 3,
+          "label": 1,
+          "type": 14,
+          "typeName": ".aria_proto.WifiAuthentication",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "hidden",
+          "number": 4,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "username",
+          "number": 5,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "disable_other_network",
+          "number": 6,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "skip_internet_check",
+          "number": 7,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "WifiReconnectRequest",
+      "fields": [
+        {
+          "name": "ssid",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "WifiStatusResponse",
+      "fields": [
+        {
+          "name": "enabled",
+          "number": 1,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "network",
+          "number": 2,
+          "label": 1,
+          "type": 11,
+          "typeName": ".aria_proto.WifiNetwork",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "reachability",
+          "number": 3,
+          "label": 1,
+          "type": 14,
+          "typeName": ".aria_proto.ReachabilityStatus",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "known_networks",
+          "number": 4,
+          "label": 3,
+          "type": 11,
+          "typeName": ".aria_proto.WifiNetwork",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "WifiForgetRequest",
+      "fields": [
+        {
+          "name": "network",
+          "number": 1,
+          "label": 2,
+          "type": 11,
+          "typeName": ".aria_proto.WifiNetwork",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "WifiEnableRequest",
+      "fields": [
+        {
+          "name": "force",
+          "number": 1,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "WifiCheckReachabilityResponse",
+      "fields": [
+        {
+          "name": "reachability",
+          "number": 1,
+          "label": 2,
+          "type": 14,
+          "typeName": ".aria_proto.ReachabilityStatus",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "WifiKeepConnectedRequest",
+      "fields": [
+        {
+          "name": "keep_connected",
+          "number": 1,
+          "label": 2,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "OculusLoginRequest",
+      "fields": [
+        {
+          "name": "access_token",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "user_secret_key",
+          "number": 2,
+          "label": 2,
+          "type": 12,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "OculusSetUserSecretRequest",
+      "fields": [
+        {
+          "name": "user_secret_key",
+          "number": 1,
+          "label": 2,
+          "type": 12,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "OculusSetAccessTokenRequest",
+      "fields": [
+        {
+          "name": "access_token",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "user_id",
+          "number": 2,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "OculusInsertLinkedAccountRequest",
+      "fields": [
+        {
+          "name": "service_provider",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "token",
+          "number": 2,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "user_id",
+          "number": 3,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "WipeDataRequest",
+      "fields": [],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "OtaCheckAvailabilityRequest",
+      "fields": [
+        {
+          "name": "full_ota",
+          "number": 1,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "OtaCheckAvailabilityResponse",
+      "fields": [
+        {
+          "name": "debug_message",
+          "number": 1,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "is_available",
+          "number": 2,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "version",
+          "number": 3,
+          "label": 1,
+          "type": 4,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "size",
+          "number": 4,
+          "label": 1,
+          "type": 4,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "OtaManualUpdateRequest",
+      "fields": [
+        {
+          "name": "full_ota",
+          "number": 1,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "DevModeRequest",
+      "fields": [
+        {
+          "name": "mode",
+          "number": 1,
+          "label": 1,
+          "type": 13,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "DevModeResponse",
+      "fields": [
+        {
+          "name": "status",
+          "number": 1,
+          "label": 1,
+          "type": 13,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "AdbModeRequest",
+      "fields": [
+        {
+          "name": "enable",
+          "number": 1,
+          "label": 2,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "AdbModeResponse",
+      "fields": [
+        {
+          "name": "status",
+          "number": 1,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "MtpModeRequest",
+      "fields": [
+        {
+          "name": "enable",
+          "number": 1,
+          "label": 2,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "MtpModeResponse",
+      "fields": [
+        {
+          "name": "status",
+          "number": 1,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "OtaEnabledRequest",
+      "fields": [
+        {
+          "name": "enable",
+          "number": 1,
+          "label": 2,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "OtaEnabledResponse",
+      "fields": [
+        {
+          "name": "enabled",
+          "number": 1,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "CrashReportsEnabledRequest",
+      "fields": [
+        {
+          "name": "enable",
+          "number": 1,
+          "label": 2,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "CrashReportsEnabledResponse",
+      "fields": [
+        {
+          "name": "enabled",
+          "number": 1,
+          "label": 2,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "AutowakeRequest",
+      "fields": [
+        {
+          "name": "enable",
+          "number": 1,
+          "label": 2,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "AutowakeResponse",
+      "fields": [
+        {
+          "name": "enabled",
+          "number": 1,
+          "label": 2,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "AutosleepTimeRequest",
+      "fields": [
+        {
+          "name": "interval",
+          "number": 1,
+          "label": 2,
+          "type": 5,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "AutosleepTimeResponse",
+      "fields": [
+        {
+          "name": "interval",
+          "number": 1,
+          "label": 2,
+          "type": 5,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "NameSetRequest",
+      "fields": [
+        {
+          "name": "name",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "HmdStatusResponse",
+      "fields": [
+        {
+          "name": "battery_level",
+          "number": 1,
+          "label": 1,
+          "type": 13,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "charger_connected",
+          "number": 2,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "fast_charger_connected",
+          "number": 3,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "charging",
+          "number": 4,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "wifi_enabled",
+          "number": 11,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "wifi_configured",
+          "number": 12,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "wifi_connected",
+          "number": 13,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "wifi_oculus_reachable",
+          "number": 14,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "wifi_ip_address",
+          "number": 15,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "wifi_device_name",
+          "number": 16,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "wifi_ssid",
+          "number": 17,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "wifi_country_code",
+          "number": 18,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "controller_primary_configured",
+          "number": 21,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "controller_primary_connected",
+          "number": 22,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "controller_secondary_configured",
+          "number": 23,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "controller_secondary_connected",
+          "number": 24,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "controller_other_configured",
+          "number": 25,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "controller_other_connected",
+          "number": 26,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "controller_primary_battery_level",
+          "number": 27,
+          "label": 1,
+          "type": 13,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "controller_secondary_battery_level",
+          "number": 28,
+          "label": 1,
+          "type": 13,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "ota_available",
+          "number": 31,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "ota_ready",
+          "number": 32,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "hmd_update_percentage_complete",
+          "number": 33,
+          "label": 1,
+          "type": 13,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "horizon_logged_in",
+          "number": 51,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "developer_mode",
+          "number": 61,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "adb_enabled",
+          "number": 62,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "system_software_locked",
+          "number": 63,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "hsw_completed",
+          "number": 71,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "nux_completed",
+          "number": 72,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "nux_status",
+          "number": 73,
+          "label": 1,
+          "type": 14,
+          "typeName": ".aria_proto.NuxStatus",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "headset_state",
+          "number": 81,
+          "label": 1,
+          "type": 14,
+          "typeName": ".aria_proto.HeadsetState",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "firmware_update_state",
+          "number": 82,
+          "label": 1,
+          "type": 14,
+          "typeName": ".aria_proto.FirmwareUpdateState",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "firmware_update_percentage",
+          "number": 83,
+          "label": 1,
+          "type": 2,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "is_recording_allowed",
+          "number": 84,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "recording_state",
+          "number": 85,
+          "label": 1,
+          "type": 14,
+          "typeName": ".aria_proto.RecordingState",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "thermal_mitigation_triggered",
+          "number": 86,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "skin_temp_celsius",
+          "number": 87,
+          "label": 1,
+          "type": 2,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "device_mode",
+          "number": 88,
+          "label": 1,
+          "type": 14,
+          "typeName": ".aria_proto.DeviceMode",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "default_recording_profile",
+          "number": 89,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "has_pending_tls_client_certs",
+          "number": 90,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "trusted_tls_client_certs",
+          "number": 91,
+          "label": 1,
+          "type": 13,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "et_needs_calibration",
+          "number": 200,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "et_calibration_state",
+          "number": 201,
+          "label": 1,
+          "type": 14,
+          "typeName": ".aria_proto.EtCalibrationState",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "ready_to_interact",
+          "number": 300,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "HmdVersionResponse",
+      "fields": [
+        {
+          "name": "board",
+          "number": 1,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "bootloader",
+          "number": 2,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "brand",
+          "number": 3,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "device",
+          "number": 4,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "display",
+          "number": 5,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "fingerprint",
+          "number": 6,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "hardware",
+          "number": 7,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "host",
+          "number": 8,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "id",
+          "number": 9,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "manufacturer",
+          "number": 10,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "model",
+          "number": 11,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "product",
+          "number": 12,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "serial",
+          "number": 13,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "tags",
+          "number": 14,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "time",
+          "number": 15,
+          "label": 1,
+          "type": 4,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "type",
+          "number": 16,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "user",
+          "number": 17,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "version_base_os",
+          "number": 31,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "version_codename",
+          "number": 32,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "version_incremental",
+          "number": 33,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "version_release",
+          "number": 34,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "version_security_patch",
+          "number": 35,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "version_branch",
+          "number": 36,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "device_mac_address",
+          "number": 41,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "marauder_device_id",
+          "number": 42,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "HmdCapabilitiesResponse",
+      "fields": [
+        {
+          "name": "chromecast_available",
+          "number": 1,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "multi_user_available",
+          "number": 11,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "manual_ota_version",
+          "number": 12,
+          "label": 1,
+          "type": 5,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "chromecast_native_receiver_available",
+          "number": 13,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "LocaleSet",
+      "fields": [
+        {
+          "name": "language",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "country",
+          "number": 2,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "TimeSet",
+      "fields": [
+        {
+          "name": "time_ms",
+          "number": 1,
+          "label": 1,
+          "type": 3,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "timezone",
+          "number": 2,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "HealthAndSafetyWarningRequest",
+      "fields": [
+        {
+          "name": "hsw_opt_out",
+          "number": 1,
+          "label": 2,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "SystemUnlockRequest",
+      "fields": [
+        {
+          "name": "token",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "ManagedModeSet",
+      "fields": [
+        {
+          "name": "level",
+          "number": 1,
+          "label": 2,
+          "type": 13,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "ManagedModeResponse",
+      "fields": [
+        {
+          "name": "level",
+          "number": 1,
+          "label": 1,
+          "type": 13,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "RecordingMetadata",
+      "fields": [
+        {
+          "name": "app_version",
+          "number": 1,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "recording_type",
+          "number": 2,
+          "label": 1,
+          "type": 14,
+          "typeName": ".aria_proto.RecordingType",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "needs_anonymization",
+          "number": 3,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "app_metadata",
+          "number": 4,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "telemetry_session_id",
+          "number": 5,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "recording_scenario",
+          "number": 6,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "upload_destination",
+          "number": 7,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "is_vio_preprocessing_enabled",
+          "number": 8,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "remote_streaming_config_json",
+          "number": 9,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "StartRecordingV2Request",
+      "fields": [
+        {
+          "name": "profile_name",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "metadata",
+          "number": 2,
+          "label": 2,
+          "type": 11,
+          "typeName": ".aria_proto.RecordingMetadata",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "streaming_enabled",
+          "number": 4,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "streaming_topic_prefix",
+          "number": 5,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "time_sync_mode",
+          "number": 6,
+          "label": 1,
+          "type": 14,
+          "typeName": ".aria_proto.TimeSyncMode",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "timecode_trigger",
+          "number": 7,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "ntp_hostname",
+          "number": 8,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "streaming_certs",
+          "number": 9,
+          "label": 1,
+          "type": 11,
+          "typeName": ".aria_proto.StreamingCertificates",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "streaming_interface",
+          "number": 10,
+          "label": 1,
+          "type": 14,
+          "typeName": ".aria_proto.StreamingInterface",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "phone_gps_info",
+          "number": 11,
+          "label": 1,
+          "type": 11,
+          "typeName": ".aria_proto.GpsStatusResponse",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "custom_profile",
+          "number": 12,
+          "label": 1,
+          "type": 11,
+          "typeName": ".aria_proto.RecordingProfile",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "attention_enabled",
+          "number": 13,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "recording_name",
+          "number": 14,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "vio_enabled",
+          "number": 15,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "vio_setup_mode",
+          "number": 16,
+          "label": 1,
+          "type": 14,
+          "typeName": ".aria_proto.VioSetupMode",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "vio_data_saving_enabled",
+          "number": 17,
+          "label": 1,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "streaming_imu_batch_count",
+          "number": 18,
+          "label": 1,
+          "type": 5,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "remote_streaming_config_json",
+          "number": 20,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": 0
+        },
+        {
+          "name": "wifi_hotspot_band",
+          "number": 21,
+          "label": 1,
+          "type": 14,
+          "typeName": ".aria_proto.WifiBand",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "rgb_isp_tuning_version",
+          "number": 22,
+          "label": 1,
+          "type": 5,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "StartRecordingV2Response",
+      "fields": [],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "RecordingStatusResponse",
+      "fields": [
+        {
+          "name": "in_progress",
+          "number": 1,
+          "label": 2,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "StorageStatusResponse",
+      "fields": [
+        {
+          "name": "size_bytes",
+          "number": 1,
+          "label": 1,
+          "type": 3,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "free_bytes",
+          "number": 2,
+          "label": 1,
+          "type": 3,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "Recording",
+      "fields": [
+        {
+          "name": "name",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "size",
+          "number": 2,
+          "label": 1,
+          "type": 4,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "metadata",
+          "number": 3,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "upload_status",
+          "number": 4,
+          "label": 1,
+          "type": 14,
+          "typeName": ".aria_proto.UploadStatus",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "upload_percentage",
+          "number": 5,
+          "label": 1,
+          "type": 2,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "upload_error_message",
+          "number": 6,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "custom_recording_profile",
+          "number": 7,
+          "label": 1,
+          "type": 11,
+          "typeName": ".aria_proto.RecordingProfile",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "ListRecordingRequest",
+      "fields": [
+        {
+          "name": "upload_status_list",
+          "number": 1,
+          "label": 3,
+          "type": 14,
+          "typeName": ".aria_proto.UploadStatus",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "ListRecordingsResponse",
+      "fields": [
+        {
+          "name": "recording",
+          "number": 1,
+          "label": 3,
+          "type": 11,
+          "typeName": ".aria_proto.Recording",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "DeleteRecordingRequest",
+      "fields": [
+        {
+          "name": "name",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "DeleteRecordingResponse",
+      "fields": [],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "AutoUploadEnabledSetRequest",
+      "fields": [
+        {
+          "name": "enable",
+          "number": 1,
+          "label": 2,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "AutoUploadEnabledSetResponse",
+      "fields": [],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "AutoUploadEnabledGetRequest",
+      "fields": [],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "AutoUploadEnabledGetResponse",
+      "fields": [
+        {
+          "name": "enabled",
+          "number": 1,
+          "label": 2,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "RecordingProfileInfo",
+      "fields": [
+        {
+          "name": "name",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "description",
+          "number": 2,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "jsonDescription",
+          "number": 3,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "ListRecordingProfilesRequest",
+      "fields": [],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "ListRecordingProfilesResponse",
+      "fields": [
+        {
+          "name": "profile",
+          "number": 1,
+          "label": 3,
+          "type": 11,
+          "typeName": ".aria_proto.RecordingProfileInfo",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "ListRecordingProfilesV2Response",
+      "fields": [
+        {
+          "name": "profile_list",
+          "number": 1,
+          "label": 2,
+          "type": 11,
+          "typeName": ".aria_proto.RecordingProfileList",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "UploadRecordingRequest",
+      "fields": [
+        {
+          "name": "name",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "UploadRecordingResponse",
+      "fields": [],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "UploadRecordingsRequest",
+      "fields": [
+        {
+          "name": "names",
+          "number": 1,
+          "label": 3,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "GpsStatusRequest",
+      "fields": [],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "GpsSvInfo",
+      "fields": [
+        {
+          "name": "sv_id",
+          "number": 1,
+          "label": 2,
+          "type": 13,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "in_use",
+          "number": 2,
+          "label": 2,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "constellation",
+          "number": 3,
+          "label": 2,
+          "type": 13,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "c_n0_dbhz",
+          "number": 4,
+          "label": 2,
+          "type": 2,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "elevation_deg",
+          "number": 5,
+          "label": 2,
+          "type": 2,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "azimuth_deg",
+          "number": 6,
+          "label": 2,
+          "type": 2,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "GpsStatusResponse",
+      "fields": [
+        {
+          "name": "fix_type",
+          "number": 1,
+          "label": 2,
+          "type": 14,
+          "typeName": ".aria_proto.GpsFixType",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "fix_time_ms",
+          "number": 2,
+          "label": 1,
+          "type": 3,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "latitude",
+          "number": 3,
+          "label": 1,
+          "type": 2,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "longitude",
+          "number": 4,
+          "label": 1,
+          "type": 2,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "altitude_meters",
+          "number": 5,
+          "label": 1,
+          "type": 2,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "accuracy_meters",
+          "number": 6,
+          "label": 1,
+          "type": 2,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "sv_info",
+          "number": 7,
+          "label": 3,
+          "type": 11,
+          "typeName": ".aria_proto.GpsSvInfo",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "RebootRequest",
+      "fields": [],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "AttentionChangeData",
+      "fields": [
+        {
+          "name": "type",
+          "number": 1,
+          "label": 2,
+          "type": 14,
+          "typeName": ".aria_proto.AttentionChangeType",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "timestamp_ms",
+          "number": 2,
+          "label": 2,
+          "type": 3,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "UploadStatusRequest",
+      "fields": [],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "UploadStatusResponse",
+      "fields": [
+        {
+          "name": "in_progress",
+          "number": 1,
+          "label": 2,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "upload_percentage",
+          "number": 2,
+          "label": 2,
+          "type": 2,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "StreamingInfo",
+      "fields": [
+        {
+          "name": "streaming_enabled",
+          "number": 1,
+          "label": 2,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "streaming_topic_prefix",
+          "number": 2,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "streaming_interface",
+          "number": 3,
+          "label": 2,
+          "type": 14,
+          "typeName": ".aria_proto.StreamingInterface",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "profile_name",
+          "number": 4,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "RecordingStateResponse",
+      "fields": [
+        {
+          "name": "recording_state",
+          "number": 1,
+          "label": 2,
+          "type": 14,
+          "typeName": ".aria_proto.RecordingState",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "current_recording",
+          "number": 2,
+          "label": 1,
+          "type": 11,
+          "typeName": ".aria_proto.Recording",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "current_streaming_info",
+          "number": 3,
+          "label": 1,
+          "type": 11,
+          "typeName": ".aria_proto.StreamingInfo",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "UpdateAppMetadataRequest",
+      "fields": [
+        {
+          "name": "recording_name",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "app_metadata",
+          "number": 2,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "SetAudioMuteRequest",
+      "fields": [
+        {
+          "name": "mute",
+          "number": 1,
+          "label": 2,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "GetAudioMuteResponse",
+      "fields": [
+        {
+          "name": "audio_state",
+          "number": 1,
+          "label": 2,
+          "type": 14,
+          "typeName": ".aria_proto.AudioMuteState",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "SubmitBugReportRequest",
+      "fields": [
+        {
+          "name": "description",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "entry_source",
+          "number": 2,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "error_description",
+          "number": 3,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "TimeProtocolResponse",
+      "fields": [
+        {
+          "name": "timestamp_ms",
+          "number": 1,
+          "label": 2,
+          "type": 3,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "SetTimeOffsetRequest",
+      "fields": [
+        {
+          "name": "offset_ms",
+          "number": 1,
+          "label": 2,
+          "type": 3,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "delay_ms",
+          "number": 2,
+          "label": 2,
+          "type": 3,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "timezone",
+          "number": 3,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "DeletionInfo",
+      "fields": [
+        {
+          "name": "name",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "success",
+          "number": 2,
+          "label": 2,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "error_code",
+          "number": 3,
+          "label": 1,
+          "type": 14,
+          "typeName": ".aria_proto.ErrorCode",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "DeleteRecordingsRequest",
+      "fields": [
+        {
+          "name": "names",
+          "number": 1,
+          "label": 3,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "DeleteRecordingsResponse",
+      "fields": [
+        {
+          "name": "deletion_info",
+          "number": 1,
+          "label": 3,
+          "type": 11,
+          "typeName": ".aria_proto.DeletionInfo",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "DdsRpcEnabledSetRequest",
+      "fields": [
+        {
+          "name": "enabled",
+          "number": 1,
+          "label": 2,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "streaming_interface",
+          "number": 2,
+          "label": 1,
+          "type": 14,
+          "typeName": ".aria_proto.StreamingInterface",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "DdsRpcEnabledStatusResponse",
+      "fields": [
+        {
+          "name": "state",
+          "number": 1,
+          "label": 2,
+          "type": 14,
+          "typeName": ".aria_proto.DdsRpcState",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "shared_session_id",
+          "number": 2,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "DdsRpcNewSessionIdResponse",
+      "fields": [
+        {
+          "name": "shared_session_id",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "ListRecordingThumbnailsRequest",
+      "fields": [
+        {
+          "name": "name",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "ListRecordingThumbnailsResponse",
+      "fields": [
+        {
+          "name": "name",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "thumbnails",
+          "number": 2,
+          "label": 3,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "GetThumbnailImageRequest",
+      "fields": [
+        {
+          "name": "name",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "GetThumbnailImageResponse",
+      "fields": [
+        {
+          "name": "name",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "image",
+          "number": 2,
+          "label": 2,
+          "type": 12,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "DefaultRecordingProfileSetRequest",
+      "fields": [
+        {
+          "name": "profile_name",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "custom_profile",
+          "number": 2,
+          "label": 1,
+          "type": 11,
+          "typeName": ".aria_proto.RecordingProfile",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "DefaultRecordingProfileStatusResponse",
+      "fields": [
+        {
+          "name": "profile_name",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "custom_profile",
+          "number": 2,
+          "label": 1,
+          "type": 11,
+          "typeName": ".aria_proto.RecordingProfile",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "StreamingCertificates",
+      "fields": [
+        {
+          "name": "root_ca",
+          "number": 1,
+          "label": 2,
+          "type": 12,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "node_cert",
+          "number": 2,
+          "label": 2,
+          "type": 12,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "node_private_key",
+          "number": 3,
+          "label": 2,
+          "type": 12,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "InstallStreamingCertsRequest",
+      "fields": [
+        {
+          "name": "streaming_certs",
+          "number": 1,
+          "label": 2,
+          "type": 11,
+          "typeName": ".aria_proto.StreamingCertificates",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "PhoneGpsUpdateRequest",
+      "fields": [
+        {
+          "name": "phone_gps_info",
+          "number": 1,
+          "label": 2,
+          "type": 11,
+          "typeName": ".aria_proto.GpsStatusResponse",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "WifiHotspotEnabledSetRequest",
+      "fields": [
+        {
+          "name": "enabled",
+          "number": 1,
+          "label": 2,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "band",
+          "number": 2,
+          "label": 2,
+          "type": 14,
+          "typeName": ".aria_proto.WifiBand",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "country_code",
+          "number": 3,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "WifiHotspotStatusResponse",
+      "fields": [
+        {
+          "name": "enabled",
+          "number": 1,
+          "label": 2,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "ssid",
+          "number": 2,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "passphrase",
+          "number": 3,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "ip_address",
+          "number": 4,
+          "label": 1,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "band",
+          "number": 5,
+          "label": 1,
+          "type": 14,
+          "typeName": ".aria_proto.WifiBand",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "WifiHotspotUpdatePasswordResponse",
+      "fields": [
+        {
+          "name": "passphrase",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "WifiClient",
+      "fields": [
+        {
+          "name": "name",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "mac",
+          "number": 2,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "ListWifiHotspotClientsResponse",
+      "fields": [
+        {
+          "name": "clients",
+          "number": 1,
+          "label": 3,
+          "type": 11,
+          "typeName": ".aria_proto.WifiClient",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "WifiSetCountryCodeRequest",
+      "fields": [
+        {
+          "name": "country_code",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "TicSyncStatusResponse",
+      "fields": [
+        {
+          "name": "server_id",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "connection_quality",
+          "number": 2,
+          "label": 1,
+          "type": 14,
+          "typeName": ".aria_proto.ConnectionQuality",
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "session_id",
+          "number": 3,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "synchronization_stability",
+          "number": 4,
+          "label": 1,
+          "type": 14,
+          "typeName": ".aria_proto.SynchronizationStability",
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "GetStreamingCertsInstalledResponse",
+      "fields": [
+        {
+          "name": "installed",
+          "number": 1,
+          "label": 2,
+          "type": 8,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "GetCalibrationJsonResponse",
+      "fields": [
+        {
+          "name": "calibration_json",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "GetRecordingDataQualityStatsResponse",
+      "fields": [
+        {
+          "name": "data_quality_stats",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "RenameRecordingRequest",
+      "fields": [
+        {
+          "name": "old_name",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "new_name",
+          "number": 2,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "InstallTlsClientCertsRequest",
+      "fields": [
+        {
+          "name": "pkcs12",
+          "number": 1,
+          "label": 2,
+          "type": 12,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "ListPendingTlsClientCertsResponse",
+      "fields": [
+        {
+          "name": "hashes",
+          "number": 1,
+          "label": 3,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "ListTrustedTlsClientCertsResponse",
+      "fields": [
+        {
+          "name": "hashes",
+          "number": 1,
+          "label": 3,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "ApproveTlsClientCertsRequest",
+      "fields": [
+        {
+          "name": "hash",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "RejectTlsClientCertsRequest",
+      "fields": [
+        {
+          "name": "hash",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "RevokeTlsClientCertsRequest",
+      "fields": [
+        {
+          "name": "hash",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "RevokeAllTlsClientCertsRequest",
+      "fields": [],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "SetPopaiAuthTokenRequest",
+      "fields": [
+        {
+          "name": "token",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "DeviceProvisionRequest",
+      "fields": [
+        {
+          "name": "registration_challenge_pkg",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "DeviceProvisionResponse",
+      "fields": [
+        {
+          "name": "registration_package",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        },
+        {
+          "name": "registration_signer",
+          "number": 2,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    },
+    {
+      "name": "DeviceCertificateInstallerRequest",
+      "fields": [
+        {
+          "name": "certificate",
+          "number": 1,
+          "label": 2,
+          "type": 9,
+          "typeName": null,
+          "defaultValue": null,
+          "oneofIndex": null
+        }
+      ],
+      "nestedMessages": [],
+      "enums": []
+    }
+  ],
+  "enums": [
+    {
+      "name": "Method",
+      "values": [
+        {
+          "name": "UNKNOWN",
+          "number": 99999
+        },
+        {
+          "name": "PING",
+          "number": 0
+        },
+        {
+          "name": "HELLO",
+          "number": 1
+        },
+        {
+          "name": "AUTHENTICATE",
+          "number": 2
+        },
+        {
+          "name": "WIFI_SCAN",
+          "number": 1001
+        },
+        {
+          "name": "WIFI_CONNECT",
+          "number": 1002
+        },
+        {
+          "name": "WIFI_STATUS",
+          "number": 1003
+        },
+        {
+          "name": "WIFI_FORGET",
+          "number": 1004
+        },
+        {
+          "name": "WIFI_ENABLE",
+          "number": 1005
+        },
+        {
+          "name": "WIFI_DISABLE",
+          "number": 1006
+        },
+        {
+          "name": "WIFI_RECONNECT",
+          "number": 1007
+        },
+        {
+          "name": "WIFI_CHECK_REACHABILITY",
+          "number": 1008
+        },
+        {
+          "name": "WIFI_KEEP_CONNECTED",
+          "number": 1009
+        },
+        {
+          "name": "OCULUS_LOGIN_DEPRECATED",
+          "number": 2001
+        },
+        {
+          "name": "OCULUS_LOGOUT",
+          "number": 2002
+        },
+        {
+          "name": "OCULUS_SET_USER_SECRET",
+          "number": 2003
+        },
+        {
+          "name": "OCULUS_SET_ACCESS_TOKEN",
+          "number": 2004
+        },
+        {
+          "name": "OCULUS_INSERT_LINKED_ACCOUNT",
+          "number": 2101
+        },
+        {
+          "name": "WIPE_DATA",
+          "number": 5001
+        },
+        {
+          "name": "OTA_CHECK_AVAILABILITY",
+          "number": 5002
+        },
+        {
+          "name": "OTA_MANUAL_UPDATE",
+          "number": 5003
+        },
+        {
+          "name": "DEV_MODE_SET",
+          "number": 6001
+        },
+        {
+          "name": "DEV_MODE_STATUS",
+          "number": 6002
+        },
+        {
+          "name": "MTP_MODE_SET",
+          "number": 6003
+        },
+        {
+          "name": "MTP_MODE_STATUS",
+          "number": 6004
+        },
+        {
+          "name": "ADB_MODE_SET",
+          "number": 6005
+        },
+        {
+          "name": "ADB_MODE_STATUS",
+          "number": 6006
+        },
+        {
+          "name": "OTA_ENABLED_SET",
+          "number": 6007
+        },
+        {
+          "name": "OTA_ENABLED_STATUS",
+          "number": 6008
+        },
+        {
+          "name": "CRASH_REPORTS_ENABLED_SET",
+          "number": 6009
+        },
+        {
+          "name": "CRASH_REPORTS_ENABLED_STATUS",
+          "number": 6010
+        },
+        {
+          "name": "AUTOWAKE_SET",
+          "number": 6011
+        },
+        {
+          "name": "AUTOWAKE_STATUS",
+          "number": 6012
+        },
+        {
+          "name": "AUTOSLEEP_TIME_SET",
+          "number": 6013
+        },
+        {
+          "name": "AUTOSLEEP_TIME_STATUS",
+          "number": 6014
+        },
+        {
+          "name": "NAME_SET",
+          "number": 6015
+        },
+        {
+          "name": "HMD_STATUS",
+          "number": 8001
+        },
+        {
+          "name": "HMD_VERSION",
+          "number": 8002
+        },
+        {
+          "name": "HMD_CAPABILITIES",
+          "number": 8003
+        },
+        {
+          "name": "LOCALE_SET",
+          "number": 9001
+        },
+        {
+          "name": "TIME_SET",
+          "number": 9002
+        },
+        {
+          "name": "HEALTH_AND_SAFETY_WARNING_SET",
+          "number": 9101
+        },
+        {
+          "name": "NUX_COMPLETED",
+          "number": 9201
+        },
+        {
+          "name": "SYSTEM_UNLOCK",
+          "number": 9301
+        },
+        {
+          "name": "MANAGED_MODE_SET",
+          "number": 11001
+        },
+        {
+          "name": "MANAGED_MODE_STATUS",
+          "number": 11002
+        },
+        {
+          "name": "STOP_RECORDING",
+          "number": 18002
+        },
+        {
+          "name": "RECORDING_STATUS",
+          "number": 18003
+        },
+        {
+          "name": "STORAGE_STATUS",
+          "number": 18004
+        },
+        {
+          "name": "LIST_RECORDINGS",
+          "number": 18005
+        },
+        {
+          "name": "DELETE_RECORDING",
+          "number": 18006
+        },
+        {
+          "name": "AUTO_UPLOAD_ENABLED_SET",
+          "number": 18007
+        },
+        {
+          "name": "AUTO_UPLOAD_ENABLED_GET",
+          "number": 18008
+        },
+        {
+          "name": "LIST_RECORDING_PROFILES",
+          "number": 18009
+        },
+        {
+          "name": "START_RECORDING_V2",
+          "number": 18010
+        },
+        {
+          "name": "UPLOAD_RECORDING",
+          "number": 18011
+        },
+        {
+          "name": "GPS_STATUS",
+          "number": 18012
+        },
+        {
+          "name": "REBOOT",
+          "number": 18013
+        },
+        {
+          "name": "ATTENTION_CHANGE",
+          "number": 18014
+        },
+        {
+          "name": "UPLOAD_STATUS",
+          "number": 18015
+        },
+        {
+          "name": "RECORDING_STATE",
+          "number": 18016
+        },
+        {
+          "name": "UPDATE_APP_METADATA",
+          "number": 18017
+        },
+        {
+          "name": "SET_AUDIO_MUTE",
+          "number": 18018
+        },
+        {
+          "name": "GET_AUDIO_MUTE",
+          "number": 18019
+        },
+        {
+          "name": "UPLOAD_RECORDINGS",
+          "number": 18020
+        },
+        {
+          "name": "SUBMIT_BUG_REPORT",
+          "number": 18021
+        },
+        {
+          "name": "TIME_PROTOCOL",
+          "number": 18022
+        },
+        {
+          "name": "SET_TIME_OFFSET",
+          "number": 18023
+        },
+        {
+          "name": "DELETE_RECORDINGS",
+          "number": 18024
+        },
+        {
+          "name": "DDS_RPC_ENABLED_SET",
+          "number": 18025
+        },
+        {
+          "name": "DDS_RPC_ENABLED_STATUS",
+          "number": 18026
+        },
+        {
+          "name": "LIST_RECORDING_THUMBNAILS",
+          "number": 18027
+        },
+        {
+          "name": "GET_THUMBNAIL_IMAGE",
+          "number": 18028
+        },
+        {
+          "name": "DEFAULT_RECORDING_PROFILE_SET",
+          "number": 18029
+        },
+        {
+          "name": "DEFAULT_RECORDING_PROFILE_STATUS",
+          "number": 18030
+        },
+        {
+          "name": "INSTALL_STREAMING_CERTS",
+          "number": 18031
+        },
+        {
+          "name": "UNINSTALL_STREAMING_CERTS",
+          "number": 18032
+        },
+        {
+          "name": "PHONE_GPS_UPDATE",
+          "number": 18033
+        },
+        {
+          "name": "LIST_RECORDING_PROFILES_V2",
+          "number": 18034
+        },
+        {
+          "name": "WIFI_HOTSPOT_ENABLED_SET",
+          "number": 18035
+        },
+        {
+          "name": "WIFI_HOTSPOT_STATUS",
+          "number": 18036
+        },
+        {
+          "name": "LIST_WIFI_HOTSPOT_CLIENTS",
+          "number": 18037
+        },
+        {
+          "name": "TIC_SYNC_STATUS",
+          "number": 18038
+        },
+        {
+          "name": "DDS_RPC_NEW_SESSION_ID",
+          "number": 18039
+        },
+        {
+          "name": "WIFI_HOTSPOT_UPDATE_PASSWORD",
+          "number": 18040
+        },
+        {
+          "name": "GET_STREAMING_CERTS_INSTALLED",
+          "number": 18041
+        },
+        {
+          "name": "GET_CALIBRATION_JSON",
+          "number": 18042
+        },
+        {
+          "name": "GET_RECORDING_DATA_QUALITY_STATS",
+          "number": 18043
+        },
+        {
+          "name": "RENAME_RECORDING",
+          "number": 18044
+        },
+        {
+          "name": "DEFAULT_RECORDING_PROFILE_CLEAR",
+          "number": 18045
+        },
+        {
+          "name": "INSTALL_TLS_CLIENT_CERTS",
+          "number": 18046
+        },
+        {
+          "name": "REVOKE_TLS_CLIENT_CERTS",
+          "number": 18047
+        },
+        {
+          "name": "REVOKE_ALL_TLS_CLIENT_CERTS",
+          "number": 18048
+        },
+        {
+          "name": "LIST_PENDING_TLS_CLIENT_CERTS",
+          "number": 18049
+        },
+        {
+          "name": "LIST_TRUSTED_TLS_CLIENT_CERTS",
+          "number": 18050
+        },
+        {
+          "name": "APPROVE_TLS_CLIENT_CERTS",
+          "number": 18051
+        },
+        {
+          "name": "REJECT_TLS_CLIENT_CERTS",
+          "number": 18052
+        },
+        {
+          "name": "SET_POPAI_AUTH_TOKEN",
+          "number": 18053
+        },
+        {
+          "name": "SET_WIFI_COUNTRY_CODE",
+          "number": 18054
+        },
+        {
+          "name": "DEVICE_PROVISION",
+          "number": 26001
+        },
+        {
+          "name": "DEVICE_CERTIFICATE_INSTALLER",
+          "number": 26002
+        }
+      ]
+    },
+    {
+      "name": "ResponseCode",
+      "values": [
+        {
+          "name": "SUCCESS",
+          "number": 0
+        },
+        {
+          "name": "FAIL",
+          "number": 1
+        },
+        {
+          "name": "FAIL_RETRY",
+          "number": 2
+        }
+      ]
+    },
+    {
+      "name": "ErrorCode",
+      "values": [
+        {
+          "name": "UNKNOWN_ERROR",
+          "number": 0
+        },
+        {
+          "name": "BAD_REQUEST",
+          "number": 1
+        },
+        {
+          "name": "UNSUPPORTED_METHOD",
+          "number": 2
+        },
+        {
+          "name": "BATTERY_TOO_LOW",
+          "number": 3
+        },
+        {
+          "name": "BAD_ARGUEMENT",
+          "number": 4
+        },
+        {
+          "name": "AUTHENTICATION_FAILURE",
+          "number": 5
+        },
+        {
+          "name": "TIMED_OUT",
+          "number": 6
+        },
+        {
+          "name": "ALREADY_IN_PROGRESS",
+          "number": 7
+        },
+        {
+          "name": "INTERNAL_ERROR",
+          "number": 9
+        },
+        {
+          "name": "WIFI_NO_NETWORK",
+          "number": 11
+        },
+        {
+          "name": "WIFI_INVALID_AUTH",
+          "number": 12
+        },
+        {
+          "name": "BAD_ACCESS_TOKEN",
+          "number": 13
+        },
+        {
+          "name": "DEVICE_WIFI_ERROR",
+          "number": 14
+        },
+        {
+          "name": "DEVICE_BLE_ERROR",
+          "number": 15
+        },
+        {
+          "name": "WIFI_NO_INTERNET",
+          "number": 16
+        },
+        {
+          "name": "WIFI_AUTH_TIMEOUT",
+          "number": 17
+        },
+        {
+          "name": "WIFI_IP_CONFIG_FAIL",
+          "number": 18
+        },
+        {
+          "name": "OPERATION_NOT_ALLOWED",
+          "number": 19
+        },
+        {
+          "name": "FAILED_TO_START_RECORDING",
+          "number": 801
+        },
+        {
+          "name": "FAILED_TO_STOP_RECORDING",
+          "number": 802
+        },
+        {
+          "name": "RECORDING_IN_PROGRESS",
+          "number": 803
+        },
+        {
+          "name": "NO_RECORDING_IN_PROGRESS",
+          "number": 804
+        },
+        {
+          "name": "INVALID_RECORDING_PROFILE",
+          "number": 805
+        },
+        {
+          "name": "FAILED_TO_LIST_RECORDINGS",
+          "number": 806
+        },
+        {
+          "name": "FW_UPDATE_IN_PROGRESS",
+          "number": 807
+        },
+        {
+          "name": "PRIVACY_SWITCH_ON",
+          "number": 808
+        },
+        {
+          "name": "RECORDING_NOT_FOUND",
+          "number": 809
+        },
+        {
+          "name": "GPS_RFCAL_INVALID",
+          "number": 810
+        },
+        {
+          "name": "INVALID_DEVICE_CALIBRATION",
+          "number": 811
+        },
+        {
+          "name": "LOW_BATTERY_LEVEL",
+          "number": 812
+        },
+        {
+          "name": "LOW_DISK_SPACE",
+          "number": 813
+        },
+        {
+          "name": "FAILED_TO_START_STREAMING",
+          "number": 814
+        },
+        {
+          "name": "FAILED_TO_STOP_STREAMING",
+          "number": 815
+        },
+        {
+          "name": "UPLOAD_ALREADY_STARTED",
+          "number": 901
+        },
+        {
+          "name": "UPLOAD_EMPTY_RECORDING",
+          "number": 902
+        },
+        {
+          "name": "UPLOAD_EMPTY_METADATA",
+          "number": 903
+        },
+        {
+          "name": "UPLOAD_INVALID_METADATA",
+          "number": 904
+        },
+        {
+          "name": "UPLOAD_VIO_PROCESSING_FAILED",
+          "number": 905
+        },
+        {
+          "name": "WIFI_CONNECTION_FAILED",
+          "number": 910
+        },
+        {
+          "name": "TIMECODE_NOT_RECEIVED",
+          "number": 911
+        },
+        {
+          "name": "NTP_TIME_SYNC_FAILED",
+          "number": 912
+        },
+        {
+          "name": "INVALID_STREAMING_INTERFACE",
+          "number": 913
+        },
+        {
+          "name": "USB_RNDIS_CONNECTION_FAILED",
+          "number": 914
+        },
+        {
+          "name": "USB_NCM_CONNECTION_FAILED",
+          "number": 915
+        },
+        {
+          "name": "PHONE_GPS_UPDATE_FAILED",
+          "number": 916
+        },
+        {
+          "name": "DDS_DISCOVERY_FAILED",
+          "number": 917
+        },
+        {
+          "name": "SHARED_SESSION_ID_NOT_RECEIVED",
+          "number": 918
+        },
+        {
+          "name": "TIC_SYNC_STATUS_FAILED",
+          "number": 919
+        },
+        {
+          "name": "THUMBNAIL_NOT_FOUND",
+          "number": 920
+        },
+        {
+          "name": "DEFAULT_RECORDING_PROFILE_NOT_SET",
+          "number": 930
+        },
+        {
+          "name": "STREAMING_CERTS_INSTALL_FAILED",
+          "number": 940
+        },
+        {
+          "name": "STREAMING_CERTS_UNINSTALL_FAILED",
+          "number": 941
+        },
+        {
+          "name": "STREAMING_CERTS_NOT_FOUND",
+          "number": 942
+        },
+        {
+          "name": "DDS_RPC_SET_ENABLED_FAILED",
+          "number": 950
+        },
+        {
+          "name": "DDS_RPC_GET_SESSION_ID_FAILED",
+          "number": 951
+        },
+        {
+          "name": "DDS_RPC_UPDATE_SESSION_ID_FAILED",
+          "number": 952
+        },
+        {
+          "name": "TICSYNC_WIFI_CONFIG_FAILED",
+          "number": 953
+        },
+        {
+          "name": "WIFI_SCAN_CONFIG_FAILED",
+          "number": 954
+        },
+        {
+          "name": "STREAMING_NOT_ALLOWED",
+          "number": 960
+        },
+        {
+          "name": "STREAMING_SETUP_FAILED",
+          "number": 961
+        },
+        {
+          "name": "NEW_FILENAME_EXISTS",
+          "number": 970
+        },
+        {
+          "name": "FILE_NOT_FOUND",
+          "number": 971
+        },
+        {
+          "name": "INVALID_FILENAME",
+          "number": 972
+        },
+        {
+          "name": "TLS_CLIENT_CERTS_ERROR",
+          "number": 980
+        },
+        {
+          "name": "MAG_DATA_RATE_INVALID",
+          "number": 981
+        },
+        {
+          "name": "INVALID_COUNTRY_CODE",
+          "number": 982
+        },
+        {
+          "name": "FAILED_TO_CONFIGURE_SENSORS",
+          "number": 983
+        },
+        {
+          "name": "INVALID_HOTSPOT_BAND",
+          "number": 984
+        }
+      ]
+    },
+    {
+      "name": "WifiAuthentication",
+      "values": [
+        {
+          "name": "NONE",
+          "number": 1
+        },
+        {
+          "name": "EAP",
+          "number": 2
+        },
+        {
+          "name": "WPA",
+          "number": 3
+        },
+        {
+          "name": "WEP",
+          "number": 4
+        }
+      ]
+    },
+    {
+      "name": "ReachabilityStatus",
+      "values": [
+        {
+          "name": "OK",
+          "number": 1
+        },
+        {
+          "name": "OCULUS_SERVER_UNREACHABLE",
+          "number": 2
+        },
+        {
+          "name": "INTERNET_UNREACHABLE",
+          "number": 3
+        },
+        {
+          "name": "ROUTER_UNREACHABLE",
+          "number": 4
+        }
+      ]
+    },
+    {
+      "name": "NuxStatus",
+      "values": [
+        {
+          "name": "NEW_DEVICE",
+          "number": 0
+        },
+        {
+          "name": "APP_NUX_COMPLETE",
+          "number": 1
+        },
+        {
+          "name": "SAFEMODE",
+          "number": 2
+        },
+        {
+          "name": "DAY0_OTA_READY",
+          "number": 3
+        },
+        {
+          "name": "DAY0_NO_OTA",
+          "number": 4
+        },
+        {
+          "name": "WAITING_FOR_REBOOT",
+          "number": 5
+        },
+        {
+          "name": "REBOOTING",
+          "number": 6
+        },
+        {
+          "name": "NOTIFY_ENDPOINT",
+          "number": 7
+        },
+        {
+          "name": "NUX_COMPLETE",
+          "number": 8
+        },
+        {
+          "name": "WAITING_FOR_HIGH_PRI_APPS_DOWNLOAD",
+          "number": 9
+        },
+        {
+          "name": "HIGH_PRI_APPS_DOWNLOAD_COMPLETE",
+          "number": 10
+        }
+      ]
+    },
+    {
+      "name": "HeadsetState",
+      "values": [
+        {
+          "name": "HEADSET_MOUNTED",
+          "number": 0
+        },
+        {
+          "name": "HEADSET_UNMOUNTED",
+          "number": 1
+        },
+        {
+          "name": "STANDBY",
+          "number": 2
+        },
+        {
+          "name": "STARTING",
+          "number": 3
+        },
+        {
+          "name": "STOPPED",
+          "number": 4
+        },
+        {
+          "name": "WAITING_FOR_SLEEP_MSG",
+          "number": 5
+        }
+      ]
+    },
+    {
+      "name": "FirmwareUpdateState",
+      "values": [
+        {
+          "name": "UPDATE_NONE",
+          "number": 0
+        },
+        {
+          "name": "UPDATE_IN_PROGRESS",
+          "number": 1
+        },
+        {
+          "name": "UPDATE_SUCCESS",
+          "number": 2
+        },
+        {
+          "name": "UPDATE_FAILED",
+          "number": 3
+        }
+      ]
+    },
+    {
+      "name": "RecordingState",
+      "values": [
+        {
+          "name": "RECORDING_STATE_NOT_RECORDING",
+          "number": 0
+        },
+        {
+          "name": "RECORDING_STATE_IN_PROGRESS",
+          "number": 1
+        },
+        {
+          "name": "RECORDING_STATE_STOPPED_BY_PRIVACY_SWITCH",
+          "number": 2
+        },
+        {
+          "name": "RECORDING_STATE_STOPPED_BY_CAPTURE_BUTTON",
+          "number": 3
+        },
+        {
+          "name": "RECORDING_STATE_STOPPED_BY_CRASH",
+          "number": 4
+        },
+        {
+          "name": "RECORDING_STATE_STOPPED_BY_LOW_BATTERY",
+          "number": 5
+        },
+        {
+          "name": "RECORDING_STATE_STOPPED_BY_LOW_DISK_SPACE",
+          "number": 6
+        },
+        {
+          "name": "RECORDING_STATE_STOPPED_BY_NETWORK_DISCONNECTION",
+          "number": 7
+        },
+        {
+          "name": "RECORDING_STATE_STOPPED_BY_MAX_FILE_SIZE",
+          "number": 8
+        }
+      ]
+    },
+    {
+      "name": "DeviceMode",
+      "values": [
+        {
+          "name": "RESEARCH",
+          "number": 0
+        },
+        {
+          "name": "PARTNER",
+          "number": 1
+        },
+        {
+          "name": "PROTOTYPE",
+          "number": 2
+        }
+      ]
+    },
+    {
+      "name": "EtCalibrationState",
+      "values": [
+        {
+          "name": "ET_CAL_STOPPED",
+          "number": 1
+        },
+        {
+          "name": "ET_CAL_CALIBRATING",
+          "number": 2
+        },
+        {
+          "name": "ET_CAL_STIMULUS_DONE",
+          "number": 3
+        }
+      ]
+    },
+    {
+      "name": "RecordingType",
+      "values": [
+        {
+          "name": "RECORDING_TYPE_TEST",
+          "number": 1
+        },
+        {
+          "name": "RECORDING_TYPE_REAL",
+          "number": 2
+        },
+        {
+          "name": "RECORDING_TYPE_REAL_BYPASS_QUARANTINE",
+          "number": 3
+        },
+        {
+          "name": "RECORDING_TYPE_PROTOTYPE",
+          "number": 4
+        }
+      ]
+    },
+    {
+      "name": "TimeSyncMode",
+      "values": [
+        {
+          "name": "NOT_ENABLED",
+          "number": 0
+        },
+        {
+          "name": "TIMECODE",
+          "number": 1
+        },
+        {
+          "name": "NTP",
+          "number": 2
+        },
+        {
+          "name": "TICSYNC_CLIENT",
+          "number": 3
+        },
+        {
+          "name": "TICSYNC_SERVER",
+          "number": 4
+        }
+      ]
+    },
+    {
+      "name": "VioSetupMode",
+      "values": [
+        {
+          "name": "TEMPLE2",
+          "number": 0
+        },
+        {
+          "name": "TEMPLE3",
+          "number": 1
+        }
+      ]
+    },
+    {
+      "name": "StreamingInterface",
+      "values": [
+        {
+          "name": "WIFI_STA",
+          "number": 0
+        },
+        {
+          "name": "USB_RNDIS",
+          "number": 1
+        },
+        {
+          "name": "USB_NCM",
+          "number": 2
+        },
+        {
+          "name": "WIFI_SAP",
+          "number": 3
+        },
+        {
+          "name": "WIFI_PROXY",
+          "number": 4
+        },
+        {
+          "name": "WIFI_ANY",
+          "number": 5
+        }
+      ]
+    },
+    {
+      "name": "UploadStatus",
+      "values": [
+        {
+          "name": "CREATED",
+          "number": 0
+        },
+        {
+          "name": "UPLOADED",
+          "number": 2
+        },
+        {
+          "name": "FAILED",
+          "number": 3
+        },
+        {
+          "name": "CANCELLED",
+          "number": 4
+        },
+        {
+          "name": "FINALIZED",
+          "number": 5
+        },
+        {
+          "name": "UPLOADING",
+          "number": 1
+        },
+        {
+          "name": "ENQUEUED",
+          "number": 6
+        },
+        {
+          "name": "BLOCKED",
+          "number": 7
+        },
+        {
+          "name": "PREPROCESSING",
+          "number": 8
+        },
+        {
+          "name": "ERROR_RECOVERABLE",
+          "number": 9
+        },
+        {
+          "name": "ERROR_UNRECOVERABLE",
+          "number": 10
+        }
+      ]
+    },
+    {
+      "name": "GpsFixType",
+      "values": [
+        {
+          "name": "NO_FIX",
+          "number": 0
+        },
+        {
+          "name": "FIX_2D",
+          "number": 1
+        },
+        {
+          "name": "FIX_3D",
+          "number": 2
+        },
+        {
+          "name": "BAD_CAL",
+          "number": 3
+        }
+      ]
+    },
+    {
+      "name": "AttentionChangeType",
+      "values": [
+        {
+          "name": "VALID",
+          "number": 0
+        },
+        {
+          "name": "MOVING_TOO_FAST",
+          "number": 1
+        },
+        {
+          "name": "WRONG_DIRECTION",
+          "number": 2
+        },
+        {
+          "name": "START_PROTOCOL",
+          "number": 3
+        },
+        {
+          "name": "STEP_COMPLETED",
+          "number": 4
+        },
+        {
+          "name": "STEP_SKIPPED",
+          "number": 5
+        },
+        {
+          "name": "PROTOCOL_COMPLETED",
+          "number": 6
+        },
+        {
+          "name": "PROTOCOL_FAILED",
+          "number": 7
+        },
+        {
+          "name": "SHOW_LEVELER",
+          "number": 8
+        },
+        {
+          "name": "HIDE_LEVELER",
+          "number": 9
+        }
+      ]
+    },
+    {
+      "name": "AudioMuteState",
+      "values": [
+        {
+          "name": "MUTED",
+          "number": 0
+        },
+        {
+          "name": "UNMUTED",
+          "number": 1
+        },
+        {
+          "name": "NOT_CONFIGURED",
+          "number": 2
+        }
+      ]
+    },
+    {
+      "name": "DdsRpcState",
+      "values": [
+        {
+          "name": "OFF",
+          "number": 0
+        },
+        {
+          "name": "ON",
+          "number": 1
+        }
+      ]
+    },
+    {
+      "name": "WifiBand",
+      "values": [
+        {
+          "name": "BAND_2GHZ",
+          "number": 0
+        },
+        {
+          "name": "BAND_5GHZ",
+          "number": 1
+        }
+      ]
+    },
+    {
+      "name": "ConnectionQuality",
+      "values": [
+        {
+          "name": "UNKNOWN_QUALITY",
+          "number": 0
+        },
+        {
+          "name": "GOOD_QUALITY",
+          "number": 1
+        },
+        {
+          "name": "MEDIUM_QUALITY",
+          "number": 2
+        },
+        {
+          "name": "BAD_QUALITY",
+          "number": 3
+        }
+      ]
+    },
+    {
+      "name": "SynchronizationStability",
+      "values": [
+        {
+          "name": "WARMING_UP",
+          "number": 0
+        },
+        {
+          "name": "STABLE",
+          "number": 1
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "wheel": "aria.whl",
+    "wheelSha256": "0368d9b92d6aa4a1edc19b9075d65a86f090bd046a12a9ae4fd93eb2cf574181",
+    "descriptorSymbol": "_ZL38descriptor_table_protodef_aria_2eproto",
+    "descriptorSha256": "4ff2d69d0b8e0d09aee892716e48591a7681c0c2a84674cf77ec707deb7f6494"
+  }
+}

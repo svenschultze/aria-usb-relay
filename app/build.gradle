@@ -1,0 +1,60 @@
+plugins {
+    id 'com.android.application'
+}
+
+def releaseVersion = new Properties()
+rootProject.file('version.properties').withInputStream { releaseVersion.load(it) }
+def requestedVersionCode = providers.environmentVariable('ARIA_VERSION_CODE').orElse(releaseVersion.getProperty('versionCode')).get()
+def requestedVersionName = providers.environmentVariable('ARIA_VERSION_NAME').orElse(releaseVersion.getProperty('versionName')).get()
+if (!(requestedVersionCode ==~ /[0-9]+/) || requestedVersionCode.toLong() < 1 || requestedVersionCode.toLong() > 2100000000) {
+    throw new GradleException('ARIA_VERSION_CODE must be a positive Android version code no greater than 2100000000.')
+}
+if (!(requestedVersionName ==~ /[0-9A-Za-z][0-9A-Za-z.+_-]{0,63}/)) {
+    throw new GradleException('ARIA_VERSION_NAME contains unsupported characters.')
+}
+def signingValues = ['ARIA_KEYSTORE_PATH', 'ARIA_KEYSTORE_PASSWORD', 'ARIA_KEY_ALIAS', 'ARIA_KEY_PASSWORD']
+        .collectEntries { name -> [(name): providers.environmentVariable(name).orNull] }
+def signingPresent = signingValues.values().count { it != null && !it.isEmpty() }
+if (signingPresent != 0 && signingPresent != signingValues.size()) {
+    throw new GradleException('Release signing requires all four ARIA_KEYSTORE_PATH, ARIA_KEYSTORE_PASSWORD, ARIA_KEY_ALIAS, and ARIA_KEY_PASSWORD environment variables.')
+}
+
+android {
+    enableKotlin = false
+    namespace 'dev.aria.usb'
+    compileSdk 36
+    buildToolsVersion '36.1.0'
+
+    defaultConfig {
+        applicationId 'dev.aria.usb'
+        minSdk 28
+        targetSdk 36
+        versionCode requestedVersionCode.toInteger()
+        versionName requestedVersionName
+    }
+
+    signingConfigs {
+        if (signingPresent == signingValues.size()) {
+            release {
+                storeFile rootProject.file(signingValues.ARIA_KEYSTORE_PATH)
+                storePassword signingValues.ARIA_KEYSTORE_PASSWORD
+                keyAlias signingValues.ARIA_KEY_ALIAS
+                keyPassword signingValues.ARIA_KEY_PASSWORD
+            }
+        }
+    }
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled false
+            if (signingPresent == signingValues.size()) {
+                signingConfig signingConfigs.release
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
