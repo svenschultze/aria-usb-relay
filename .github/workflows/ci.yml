@@ -75,7 +75,7 @@ jobs:
       - name: Build debug and unsigned release; run Android lint
         run: bash gradlew assembleDebug assembleRelease lintDebug --no-daemon --stacktrace
       - name: Upload debug APK and lint report
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         if: always()
         with:
           name: android-debug-and-lint
